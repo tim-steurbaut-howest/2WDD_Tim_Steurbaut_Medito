@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Een rustige, interactieve onboarding voor de Medito meditatie-app."
+    />
+    <meta name="theme-color" content="#090b0d" />
+    <title>Welkom bij Medito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="assets/logo/medito_logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script
+      src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"
+      defer
+    ></script>
+    <script src="js/app.js" defer></script>
+  </head>
+
+  <body>
+    <main
+      class="onboarding"
+      id="onboarding"
+      aria-label="Medito onboarding"
+      aria-live="polite"
+    >
+      <header class="topbar">
+        <div class="brand-mark" aria-label="Medito">
+          <span class="brand-mark__symbol" aria-hidden="true"></span>
+        </div>
+        <p class="step-count" id="step-count" aria-label="Scherm 1 van 5">01/05</p>
+      </header>
+
+      <section class="animation-zone" aria-label="Animatie">
+        <button
+          class="animation-control"
+          id="animation-control"
+          type="button"
+          aria-label="Pauzeer ademhalingsanimatie"
+          disabled
+        >
+          <lottie-player
+            id="lottie-player"
+            src="assets/lottie/01_NOISE_TO_FOCUS.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></lottie-player>
+          <span class="animation-state" id="animation-state" aria-hidden="true"></span>
+        </button>
+        <p class="animation-instruction" id="animation-instruction" hidden>
+          Tik om te pauzeren
+        </p>
+      </section>
+
+      <section class="story" id="story">
+        <div class="story__copy">
+          <p class="eyebrow" id="eyebrow">01 — Kom tot rust</p>
+          <h1 id="title">Je hoofd staat<br />nooit stil.</h1>
+          <p class="description" id="description">
+            Gedachten komen en gaan. Medito helpt je om even afstand te nemen.
+          </p>
+        </div>
+
+        <nav class="navigation" aria-label="Onboarding navigatie">
+          <button class="back-button" id="back-button" type="button" aria-label="Vorig scherm">
+            <span aria-hidden="true">←</span>
+          </button>
+
+          <div class="pagination" id="pagination" aria-label="Kies een scherm"></div>
+
+          <button class="next-button" id="next-button" type="button">
+            <span id="next-label">Maak ruimte</span>
+            <span class="next-button__arrow" aria-hidden="true">→</span>
+          </button>
+        </nav>
+      </section>
+
+      <div class="completion-message" id="completion-message" role="status" hidden>
+        Je bent klaar om te beginnen.
+      </div>
+    </main>
+
+    <noscript>
+      <p class="noscript-message">Schakel JavaScript in om de Medito-onboarding te bekijken.</p>
+    </noscript>
+  </body>
+</html>
