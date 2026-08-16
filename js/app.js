@@ -53,6 +53,7 @@ const slides = [
     inverseForeground: "#090b0d",
     dots: "rgba(9, 11, 13, 0.27)",
     lottie: "assets/lottie/04_BUILD_RHYTHM.json",
+    showWeekdays: true,
   },
   {
     eyebrow: "05 — Klaar om te beginnen",
@@ -83,6 +84,7 @@ const pagination = document.querySelector("#pagination");
 const player = document.querySelector("#lottie-player");
 const animationControl = document.querySelector("#animation-control");
 const animationInstruction = document.querySelector("#animation-instruction");
+const weekdays = document.querySelector("#weekdays");
 const completionMessage = document.querySelector("#completion-message");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -106,7 +108,6 @@ function createPagination() {
 
 function loadAnimation(slide) {
   animationIsPlaying = true;
-  animationControl.classList.remove("is-paused");
   animationControl.disabled = !slide.interactive;
   animationControl.setAttribute(
     "aria-label",
@@ -114,6 +115,7 @@ function loadAnimation(slide) {
   );
   animationInstruction.hidden = !slide.interactive;
   animationInstruction.textContent = "Tik om te pauzeren";
+  weekdays.hidden = !slide.showWeekdays;
 
   const startPlayer = () => {
     player.load(slide.lottie);
@@ -201,12 +203,10 @@ function toggleBreathingAnimation() {
 
   if (animationIsPlaying) {
     player.pause();
-    animationControl.classList.add("is-paused");
     animationControl.setAttribute("aria-label", "Speel ademhalingsanimatie verder");
     animationInstruction.textContent = "Tik om verder te gaan";
   } else {
     player.play();
-    animationControl.classList.remove("is-paused");
     animationControl.setAttribute("aria-label", "Pauzeer ademhalingsanimatie");
     animationInstruction.textContent = "Tik om te pauzeren";
   }
