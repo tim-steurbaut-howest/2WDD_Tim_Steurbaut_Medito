@@ -117,6 +117,12 @@ button:focus-visible {
   letter-spacing: 0.025em;
 }
 
+.step-count,
+.eyebrow {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-weight: 700;
+}
+
 .step-count {
   font-size: 0.66rem;
 }
@@ -207,7 +213,7 @@ h1 {
   max-width: 330px;
   margin: 0;
   font-family: "Instrument Serif", Georgia, serif;
-  font-size: clamp(2.2rem, 10.2vw, 2.7rem);
+  font-size: clamp(2.8rem, 12.8vw, 3.125rem);
   font-weight: 400;
   line-height: 0.97;
   letter-spacing: -0.035em;
@@ -410,9 +416,6 @@ h1 {
   }
   .eyebrow {
     margin-bottom: 8px;
-  }
-  h1 {
-    font-size: clamp(1.9rem, 9vw, 2.25rem);
   }
   .description {
     margin-top: 8px;
